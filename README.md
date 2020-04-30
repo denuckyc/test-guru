@@ -1,24 +1,16 @@
-# README
+# TestGuru
+Проект "TestGuru"
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Требования:
 
-Things you may want to cover:
+* ruby 2.6.5p114
 
-* Ruby version
+* Rails 6.0.2.2
 
-* System dependencies
+Список сущностей:
 
-* Configuration
+* Тесты с вопросами и ответами
 
-* Database creation
+* Администраторы, которые знимаются управлением тестов
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Пользователи, которые выполняют тесты
