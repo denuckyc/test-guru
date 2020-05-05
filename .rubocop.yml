@@ -4,6 +4,7 @@ require:
 AllCops:
   Exclude:
     - db/schema.rb
+    - db/seeds.rb
     - db/migrate/*
     - config/*
     - bin/*

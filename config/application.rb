@@ -2,6 +2,7 @@ require_relative 'boot'
 
 require 'rails/all'
 
+I18n.config.available_locales = :ru
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
