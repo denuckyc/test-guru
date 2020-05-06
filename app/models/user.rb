@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :passing_test
   has_many :tests, through: :passing_test
 
   def passed_tests(level)
