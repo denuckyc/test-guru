@@ -15,11 +15,11 @@ categories = Category.create([
                              ])
 
 tests = Test.create([
-                      { title: 'Basic Ruby', level: 1, category_id: categories[0].id },
-                      { title: 'Advanced Ruby', level: 2, category_id: categories[0].id },
-                      { title: 'Basic HTML und CSS', level: 1, category_id: categories[1].id },
-                      { title: 'Normal SQL', level: 2, category_id: categories[2].id },
-                      { title: 'Hard SQL', level: 3, category_id: categories[2].id }
+                      { title: 'Basic Ruby', level: 1, category_id: categories[0].id, author_id: User.last.id },
+                      { title: 'Advanced Ruby', level: 2, category_id: categories[0].id, author_id: User.last.id },
+                      { title: 'Basic HTML und CSS', level: 1, category_id: categories[1].id, author_id: User.last.id },
+                      { title: 'Normal SQL', level: 2, category_id: categories[2].id, author_id: User.last.id },
+                      { title: 'Hard SQL', level: 3, category_id: categories[2].id, author_id: User.last.id }
                     ])
 
 questions = Question.create([
