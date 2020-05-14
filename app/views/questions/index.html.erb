@@ -1,0 +1,11 @@
+<h1>Список вопросов по теме <%= @test.title %></h1>
+
+<table>
+  <tbody>
+    <% @test.questions.each do |question| %>
+      <tr>
+        <td><%= question.body %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

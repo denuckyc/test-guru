@@ -24,6 +24,7 @@ tests = Test.create([
 
 questions = Question.create([
                               { body: 'Чем отличается VARCHAR от NVARCHAR?', test_id: tests[3].id },
+                              { body: 'BLA BLA BLA?', test_id: tests[0].id },
                               { body: 'В чем разница между проверкой block_given? и block.nil?', test_id: tests[1].id },
                               { body: 'Чем отличается puts от print?', test_id: tests[0].id },
                               { body: 'Расскажите, в каких случаях уместно использование элемента small.', test_id: tests[2].id }
