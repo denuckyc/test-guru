@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Создание вопроса</title>
+</head>
+  <body>
+    <form name="test" method="post" action=/tests/<%= params[:test_id] %>/questions>
+      <input name="authenticity_token" value="<% form_authenticity_token %>" type="hidden">
+      <p>
+        <b>Введите вопрос:</b><br />
+        <input type="text" name="question[body]" size="100" />
+      </p>
+      <p>
+        <input type="submit" value="Отправить" />
+        <input type="reset" value="Очистить" />
+      </p>
+    </form>
+  </body>
+</html>
