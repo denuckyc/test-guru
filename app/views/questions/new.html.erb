@@ -8,7 +8,7 @@
   <title>Создание вопроса</title>
 </head>
   <body>
-    <form name="test" method="post" action="/tests/1/questions">
+    <form name="test" method="post" action=/tests/<%= params[:test_id] %>/questions>
       <input name="authenticity_token" value="<% form_authenticity_token %>" type="hidden">
       <p>
         <b>Введите вопрос:</b><br />

@@ -18,7 +18,8 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = @test.questions.create(question_params)
+    # byebug
+    @question = @test.questions.new(question_params)
     if @question.save
       redirect_to @question
     else
