@@ -1,12 +1,12 @@
 class QuestionsController < ApplicationController
 
-  before_action :find_question, only: [:show, :destroy]
+  before_action :find_question, only: [:show, :edit, :update, :destroy]
   before_action :find_test, only: [:index, :create, :new]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_qestion_not_found
 
   def index
-
+    @questions = @test.questions
   end
 
   def show
@@ -18,18 +18,26 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    # byebug
     @question = @test.questions.new(question_params)
     if @question.save
-      redirect_to @question
+      redirect_to test_questions_path
     else
-      render plain: 'NOT OK'
+      render :new
+    end
+  end
+
+  def update
+    @question.update(question_params)
+    if @question.save
+      redirect_to test_questions_path(@question.test.id)
+    else
+      render :edit
     end
   end
 
   def destroy
     @question.destroy
-    render plain: 'OK'
+    redirect_to test_questions_path(@question.test.id)
   end
 
   private
