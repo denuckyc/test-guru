@@ -5,6 +5,6 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   def passed_tests(level)
-    PassingTest.joins(:test).where(tests: {level: level}).order(title: :DESC).pluck('tests.title')
+    PassingTest.joins(:test).where(tests: { level: level }).order(title: :DESC).pluck('tests.title')
   end
 end

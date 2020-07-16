@@ -1,13 +1,12 @@
 <h1>Список вопросов по теме <%= @test.title %></h1>
 
 <table>
-  <tbody>
-    <% @test.questions.each do |question| %>
-      <tr>
-        <td><%= question.body %></td>
-        <td><%= link_to "Delete", question_path(question), method: :delete, data: { confirm: "Are you sure?" } %></td>
-      </tr>
-    <% end %>
-    <td><br><br><%= link_to "New question", 'questions/new' %></td>
-  </tbody>
+  <tr>
+    <th>Вопрос</th>
+    <th colspan="2">Действия</th>
+  </tr>
+  <%= render @questions %>
 </table>
+<br>
+<%= link_to 'Новый вопрос', new_test_question_path %> | <%= link_to 'Назад', test_path(params[:test_id]) %>
+<br>

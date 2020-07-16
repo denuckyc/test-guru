@@ -1,0 +1,10 @@
+<%= form_with model: [@test, @question], local: true do |form| %>
+  <%= render 'errors', resource: @question %>
+    <p>
+      <%= form.label :body %>
+      <%= form.text_field :body %>
+    </p>
+
+    <%= form.submit %>
+  <% end %>
+  <br>

@@ -11,7 +11,7 @@ class Test < ApplicationRecord
   scope :filter_by_title, ->(title) { joins(:category).where(categories: { title: title }) }
 
   validates :title, presence: true
-  validates_numericality_of :level, only_integer: true, greater_than_or_equal_to: 0
+  validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :title, uniqueness: { scope: :level }
 
   def self.sort_tests(category)
