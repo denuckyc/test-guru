@@ -40,10 +40,3 @@ answers = Answer.create([
                           { body: 'Не знаю', question_id: questions[3].id },
                           { body: 'Юридические текст и прочее', correct: true, question_id: questions[3].id }
                         ])
-
-pass_test = PassingTest.create([
-                                 { test_id: tests[3].id, user_id: User.last.id, passing: true },
-                                 { test_id: tests[1].id, user_id: User.last.id },
-                                 { test_id: tests[0].id, user_id: User.last.id, passing: true },
-                                 { test_id: tests[2].id, user_id: User.last.id, passing: true }
-                               ])
