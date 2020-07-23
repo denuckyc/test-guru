@@ -1,5 +1,5 @@
 class TestPassage < ApplicationRecord
-  SUCCESS_RATE = 85
+  SUCCESS_RATE = 85.freeze
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
