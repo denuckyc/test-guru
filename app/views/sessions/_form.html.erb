@@ -1,0 +1,16 @@
+<%= form_with url: sessions_path, local: true do |form| %>
+  <% if flash[:alert]%>
+    <%= content_tag :p, flash[:alert], class: 'flash alert' %>
+  <% end %>
+
+  <p>
+    <%= form.label 'Почта:' %>
+    <%= form.text_field :email, id: :email %>
+  </p>
+  <p>
+    <%= form.label 'Пароль:' %>
+    <%= form.password_field :password, id: :password %>
+  </p>
+
+  <%= form.submit 'Вход' %>
+<% end %>
