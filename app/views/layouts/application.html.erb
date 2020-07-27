@@ -11,13 +11,16 @@
 
   <body>
     <h1><%= link_to 'Тест-Гуру', root_path %></h1>
+
       <p class="nav user">
-      <% if logged_in? %>
+      <% if user_signed_in? %>
         Добро пожаловать, <b><%= current_user.email %></b>! <%= link_to 'Выйти', logout_path, method: :delete %>
       <% else %>
         <%= link_to 'Регистрация', signup_path %> | <%= link_to 'Войти', login_path %>
       <% end %>
       </p>
+
+      <%= render 'shared/flash' %>
 
 
     <%= yield %>
