@@ -6,10 +6,6 @@ class TestsController < ApplicationController
     @tests = Test.all
   end
 
-  def show
-    @questions = @test.questions
-  end
-
   def start
     current_user.tests.push(@test)
     redirect_to current_user.test_passage(@test)

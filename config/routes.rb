@@ -10,15 +10,15 @@ Rails.application.routes.draw do
     end
   end
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-
-  # root to: 'questions#index'
-
-  resources :tests do
-    resources :questions, shallow: true do
-      resources :answers, shallow: true, except: :index
+  namespace :admin do
+    resources :tests do
+      resources :questions, shallow: true do
+        resources :answers, shallow: true
+      end
     end
+  end
 
+  resources :tests, only: :index do
     member do
       post :start
     end

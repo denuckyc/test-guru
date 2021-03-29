@@ -4,6 +4,6 @@ class TestsMailer < ApplicationMailer
     @user = test_passage.user
     @test = test_passage.test
 
-    mail to: @user.email, subject: 'Вы прошли тест!'
+    mail to: @user.email, subject: 'You have completed the test on the topic #{@test.title}!'
   end
 end

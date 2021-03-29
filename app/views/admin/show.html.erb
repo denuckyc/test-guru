@@ -1,0 +1,11 @@
+<h2>Test <%= @test.title %></h2>
+<%= link_to 'Редактировать вопросы', test_questions_path(params[:id]) %>
+
+<h3>Вопросы:</h3>
+<ul>
+  <% @questions.each do |question| %>
+    <li> <%= question.body %>
+  <% end %>
+</ul>
+<%= link_to 'Назад', tests_path %>
+<br>

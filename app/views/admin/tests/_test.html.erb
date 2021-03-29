@@ -1,0 +1,6 @@
+<tr>
+  <td><%= "#{test,title}, with #{pluralize(test.questions.count, 'question')}" %></td>
+  <td><%= link_to 'Edit', edit_admin_test_path(test) %></td>
+  <td><%= link_to 'Questions', admin_test_questions_path(test) %></td>
+  <td><%= link_to 'Delete', admin_test_path(test), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>
