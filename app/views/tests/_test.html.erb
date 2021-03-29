@@ -1,5 +1,4 @@
-<li>
-<%= "#{test.title}, количество вопросов #{test.questions.count}" %>
-<%= link_to 'Показать вопросы', test_path(test) %>
-<%= button_to 'Начать', start_test_path(test) %>
-</li>
+<tr>
+  <td><%= "#{test.title}, количество вопросов #{test.questions.count}" %></td>
+  <td><%= button_to 'Начать', start_test_path(test) %></td>
+</tr>

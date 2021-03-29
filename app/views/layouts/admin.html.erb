@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Panel | TestGuru</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="site">
+      <header class="site-header admin">
+        <h1 class="site-title admin"><%= link_to 'TestGuru', root_path %></h1>
+
+        <nav class="site-navigation admin">
+        <% if user_signed_in? %>
+          <li>Press buttons wisely, <b><%= current_user.name %></b>!</li>
+          <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <ul>
+            <li><%= link_to 'Register', new_user_registration_path %></li>
+            <li><%= link_to 'Login', new_user_session_path %></li>
+          </ul>
+        <% end %>
+        </nav>
+      </header>
+      <main class="content-wrapper">
+        <article class="site-content">
+        <%= render 'shared/flash' %>
+          <%= yield %>
+        </article>
+      </main>
+      <footer class="site-footer">
+        <p><%= render 'shared/footer' %></p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -10,18 +10,34 @@
   </head>
 
   <body>
-    <h1><%= link_to 'Тест-Гуру', root_path %></h1>
-      <p class="nav user">
-      <% if logged_in? %>
-        Добро пожаловать, <b><%= current_user.email %></b>! <%= link_to 'Выйти', logout_path, method: :delete %>
-      <% else %>
-        <%= link_to 'Регистрация', signup_path %> | <%= link_to 'Войти', login_path %>
-      <% end %>
-      </p>
+    <div class="site">
+      <header class="site-header">
+        <h1 class="site-title"><%= link_to 'TestGuru', root_path %></h1>
 
-
-    <%= yield %>
-    <br>
-    <%= render 'shared/footer' %>
+        <nav class="site-navigation">
+        <% if user_signed_in? %>
+          <li>Welcome, <b><%= current_user.name %></b>!</li>
+          <% if current_user.is_a?(Admin) %>
+            <li><%= link_to 'Admin', admin_root_path %></li>
+          <% end %>
+          <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <ul>
+            <li><%= link_to 'Register', new_user_registration_path %></li>
+            <li><%= link_to 'Login', new_user_session_path %></li>
+          </ul>
+        <% end %>
+        </nav>
+      </header>
+      <main class="content-wrapper">
+        <article class="site-content">
+        <%= render 'shared/flash' %>
+          <%= yield %>
+        </article>
+      </main>
+      <footer class="site-footer">
+        <p><%= render 'shared/footer' %></p>
+      </footer>
+    </div>
   </body>
 </html>
